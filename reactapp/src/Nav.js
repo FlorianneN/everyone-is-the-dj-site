@@ -5,8 +5,8 @@ import {Menu, Icon} from 'antd'
 import { 
   Container,
   Row,
+  Col,
   Button,
-  Nav,
   NavItem,
   NavLink,
 } from 'reactstrap';
@@ -15,35 +15,17 @@ function Nav() {
 
 
   return (
-    <Container>
-    <nav>
-      <span className="">
-            <img src="./public/logo192.png" className="d-inline-block align-top" alt="logo" />
-      </span>
-          <NavItem>
-            <NavLink style={{color:'white'}}>Connexion</NavLink>
-          </NavItem>
-          
-      {/* <Menu style={{textAlign: 'center'}} mode="horizontal" theme="dark">
-
-        <Menu.Item key="connexion">
-          <Link to="/ScreenConnexion">
-            <Icon type="home" />
-            Connexion
-          </Link>
-        </Menu.Item>
-
-
-        <Menu.Item key="app">
-          <Link to="/">
-            <Icon type="logout" />
-            Logout
-          </Link>
-        </Menu.Item>
-
-      </Menu> */}
-    </nav>
-    </Container>
+   <Container>
+    <Row  className="nav-header">
+      <Col>
+            <img src="./assets/logo3.png" width='300' className="d-inline-block align-top mls mts" alt="logo" />
+      </Col>
+      <Col>
+            <a href='/ScreenConnexion' className='nav-menu ul-clean'>Connexion</a>
+      </Col>
+    
+    </Row>
+  </Container>
   );
 }
 

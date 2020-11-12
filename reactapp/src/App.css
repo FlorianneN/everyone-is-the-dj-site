@@ -13,6 +13,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,12 +39,261 @@
   }
 }
 
+/* ------- TYPO -------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Staatliches&display=swap');
+
+h1, .h1-like,
+h2, .h2-like,
+h3, .h3-like,
+h4, .h4-like,
+h5, .h5-like,
+h6, .h6-like { 
+	font-family: 'Staatliches', cursive;
+
+	color: white;
+	line-height: 1.2;
+	margin: 0 0 0.625em 0;
+}
+h1, .h1-like {
+	font-size: 2.5em;
+}
+h2, .h2-like {
+	font-size: 2em;
+}
+h3, .h3-like {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+}
+h4, .h4-like {
+	font-size: 1.25em;
+}
+h5, .h5-like {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 1em;
+}
+h6, .h6-like {
+	font-family: '', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+}
+
+p, .body-like {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+}
+
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 1em;
+}
+
+
+.txt-white{
+  color: white;
+}
+
+
+/* ------- HELPERS -------- */
+
+.ul-clean {
+  list-style-type: none;
+}
+
+/*
+	m = margin
+	a, t, b = all, top, bottom
+	n, s, m, l = none, small, medium, large
+*/
+
+.man {
+	margin: 0;
+}
+.mas {
+	margin: 20px;
+}
+.mam {
+	margin: 40px;
+}
+.mal {
+	margin: 60px;
+}
+
+.mln {
+	margin-left: 0;
+}
+
+.mlxs {
+	margin-left: 10px;
+}
+.mls {
+	margin-left: 20px;
+}
+.mlm {
+	margin-left: 40px;
+}
+.mll {
+	margin-left: 60px;
+}r
+.mrn {
+	margin-left: 0;
+}
+
+.mrxs {
+	margin-right: 10px;
+}
+.mrs {
+	margin-right: 20px;
+}
+.mrm {
+	margin-right: 40px;
+}
+.mrl {
+	margin-right: 60px;
+}
+
+.mtn {
+	margin-top: 0;
+}
+
+.mtxs {
+	margin-top: 10px;
+}
+.mts {
+	margin-top: 20px;
+}
+.mtm {
+	margin-top: 40px;
+}
+.mtl {
+	margin-top: 60px;
+}
+
+
+.mbn {
+	margin-bottom: 0;
+}
+.mbxs {
+	margin-bottom: 10px;
+}
+.mbs {
+	margin-bottom: 20px;
+}
+.mbm {
+	margin-bottom: 40px;
+}
+.mbl {
+	margin-bottom: 60px;
+}
+
+.pas {
+	padding: 20px;
+}
+
+.ptn {
+	padding-top: 0px;
+}
+.pts {
+	padding-top: 20px;
+}
+.ptm {
+	padding-top: 50px;
+}
+.ptl {
+	padding-top: 100px;
+}
+
+
+
+.pbn {
+	padding-bottom: 0px;
+}
+.pbs {
+	padding-bottom: 20px;
+}
+.pbm {
+	padding-bottom: 50px;
+}
+.pbl {
+	padding-bottom: 100px;
+}
+
+
+.pln {
+	padding-left: 0px;
+}
+.pls {
+	padding-left: 10px;
+}
+.plm {
+	padding-left: 50px;
+}
+.pll {
+	padding-left: 100px;
+}
+
+/* ------- Navigation -------- */
+
+.nav-header {
+  background-color: #161616;
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.nav-menu{
+  text-align: right;
+}
+
+/* ------- GENERAL -------- */
+
+.body {
+background-color: #131313;
+height: 100vh;
+}
+/* ------- Bouton -------- */
+
+.button {
+  display: inline-block;
+  background-color: #584DAD;
+  border: 2px solid #584DAD;
+	color: white;
+	border-radius: 10px;
+	padding: 0 1.25em;
+	line-height: 2.5;
+	text-decoration: none;
+}
+.button:hover {
+  background-color:transparent;
+  border: 2px solid #584DAD;
+	color: #584DAD;
+}
+
+/* ------- COMPOSANTS -------- */
+
+
+/* ACCUEIL/CONNEXION */
+
+/* .banner{
+  height: 80px;
+  background-image: url('/assets/banneraccueil.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+} */
+
 .Login-page{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height:100vh;
+  /* height:100vh; */
   background-color: #131313;
   /* background-image: url('/reactapp/public/logo512.png'); */
   /* background-position: center;
@@ -52,10 +303,6 @@
 
   }
 
-.Login-input{
-margin: 15px;
-width: 400px;
-}
 
 .Sign {
   display: flex;
@@ -63,35 +310,24 @@ width: 400px;
   align-items: center;
   justify-content: center;
   padding-bottom: 15px;
-  border-radius: 5%;
-  border-color: white;
-  background-color: rgba(63,169,255,0.5);
+  border-radius: 10%;
+  border-color: #E59622;
+  background-color: #E59622;
   margin: 40px;
+}
+
+.Login-input{
+margin: 15px;
+width: 400px;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+border :2px solid #584DAD;
+border-radius: 10px;
+padding-left: 10px;
 }
 
 .Sign .Login-input{
 width: 250px;
 }
 
-.HomeThemes{
-margin-left: 50px;
-margin-right: 50px;
-margin-top: 20px;
-}
-
-.Banner {
-height: 80px;
-/* background-image: url('/reactapp/public/logo512.png'); */
-/* background-position: center;
-background-repeat: no-repeat;
-background-size: cover; */
-opacity: 0.8;
-}
-
-.Card{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-
-}
 
