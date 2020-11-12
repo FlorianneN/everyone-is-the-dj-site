@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './App.css';
 
 
-import ScreenHome from './ScreenHome';
-import ScreenAccueil from './ScreenAccueil';
+import ScreenHome from '../src/components/ScreenHome';
+import ScreenAccueil from '../src/components/ScreenAccueil';
 
 
 function App() {

@@ -1,29 +1,34 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 import {Input,Button} from 'antd';
 import {Link} from 'react-router-dom'
 import Nav from './Nav'
 import { Container, Row, Col } from 'reactstrap';
+import Logo from '../assets/logo3.png'
 
 function ScreenConnexion() {
 
   return (
-    <Container className="themed-container body" fluid={true} >
+    <Container className="themed-container body" fluid>
     
-    <Nav/>
-    
-    
+    <div className='nav-header'>
+      {/*   className="nav-header" */}
 
-   
-    <Row xs="12" className="Login-page">
-      <Col >
-        <h1 className='text-center txt-white'>Bienvenu chez Everyone is the Dj </h1>
-        <p className='text-center txt-white h3-like'>Prêt à faire la fête ? </p>
-      </Col>
+            <img src={Logo} width='300' className="d-inline-block align-top mls mts mbs" alt="logo" />
+     
+    </div>
+    
+    <div className="Login-page grid mtm">
+      <div className='col-m-12 txt-center' >
+        <h1 className=' txt-white plm prm'>Bienvenue chez Everyone is the Dj </h1>
+        <p className='txt-white h3-like'>Prêt à faire la fête ? </p>
+      </div>
 
           {/* inscription */}
 
-          <Col className="Sign">
+   
+          <div>
+            <div className='Sign'>
                   <p className='h4-like mts'>Créer une nouvelle soirée</p>
                   
                   <Input className="Login-input" placeholder="max" />
@@ -31,24 +36,28 @@ function ScreenConnexion() {
                   <Input className="Login-input" placeholder="password" />
             
 
-                  <Button href="/ScreenHome" type="primary" className='button'>Créer sa soirée</Button>
-          </Col>
+                  <Button href="/ScreenHome" type="primary" className='button'>Créer</Button>
+            </div>
+          </div>
 
           {/* connexion */}
 
-          <Col className="Sign">
+   
+          <div>
+            <div className='Sign'>
                   <p className='h4-like mts'>Rejoindre une soirée</p>
                   <Input className="Login-input" placeholder="max" />
                   <Input className="Login-input" placeholder="soirée max" />
                   <Input className="Login-input" placeholder="password" />
             
 
-                  <Button href="/ScreenHome" type="primary" className='button'>Rejoindre la soirée</Button>
+                  <Button href="/ScreenHome" type="primary" className='button'>Rejoindre</Button>
                   {/* <Link to="/screensource"> */}
+            </div>
 
-          </Col>
+          </div>
 
-      </Row>
+      </div>
     </Container>
   );
 }
