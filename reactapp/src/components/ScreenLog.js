@@ -36,13 +36,14 @@ function ScreenLog() {
                   <Input className="Login-input" placeholder="password" />
             
 
-                  <Button href="/ScreenHome" type="primary" className='button'>Créer</Button>
+                  <Button 
+                  href="/ScreenHome" 
+                  // onClick={() => handleSubmitSignin()} 
+                  type="primary" className='button'>Créer</Button>
             </div>
           </div>
 
           {/* connexion */}
-
-   
           <div>
             <div className='Sign'>
                   <p className='h4-like mts'>Rejoindre une soirée</p>
@@ -51,7 +52,11 @@ function ScreenLog() {
                   <Input className="Login-input" placeholder="password" />
             
 
-                  <Button href="/ScreenHome" type="primary" className='button'>Rejoindre</Button>
+                  <Button 
+                  href="/ScreenHome" 
+                  // onClick={() => handleSubmitSignup()} 
+                  type="primary" 
+                  className='button'>Rejoindre</Button>
                   {/* <Link to="/screensource"> */}
             </div>
 

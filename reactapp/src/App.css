@@ -242,7 +242,7 @@ p, .body-like {
 
 .nav-menu{
   text-align: right;
-  /* margin-right: 2em; */
+  margin-right: 2em;
   color: white;
   text-decoration: none;
   font-family: 'Staatliches', cursive;
@@ -325,7 +325,7 @@ height: 100vh;
 /* ------- COMPOSANTS -------- */
 
 
-/* ACCUEIL/CONNEXION */
+/* ---- ACCUEIL/CONNEXION----- */
 
 /* .banner{
   height: 10em;
@@ -366,7 +366,7 @@ height: 100vh;
 
 .Login-input{
 margin: 15px;
-width: 400px;
+width: 60%;
 padding-top: 0.5em;
 padding-bottom: 0.5em;
 border :2px solid #584DAD;
@@ -378,6 +378,7 @@ padding-left: 10px;
 width: 250px;
 }
 
+/* ------Home ---- */
 .box-1{
 	/* max-height: 500px; */
 	display: flex;
@@ -387,7 +388,7 @@ width: 250px;
 	padding-bottom: 15px;
 	border-radius: 10%;
 	border-color: #242424;
-	background-color: #242424;
+	background-color: #202020;
 	margin: 40px;
 }
 
@@ -401,7 +402,17 @@ width: 250px;
 	color: violet;
 }
 
+/* ------TIMER ---- */
 
+.timer{
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #FF0060;
+	border-color: #FF0060;
+	border-radius: 10px;
+	font-size: 3em;
+}
+  
 /*-------------------------------------------------------------------------------------------------------------------------------------*/
 /* --------------------------------------------------------CSS GRID PERSONNEL */
 /*-----------------------------------------------------------------------------------------------------------------*/
