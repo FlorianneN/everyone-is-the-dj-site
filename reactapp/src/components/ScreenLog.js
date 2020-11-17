@@ -6,7 +6,7 @@ import Nav from './Nav'
 import { Container, Row, Col } from 'reactstrap';
 import Logo from '../assets/logo3.png'
 
-function ScreenConnexion() {
+function ScreenLog() {
 
   return (
     <Container className="themed-container body" fluid>
@@ -18,9 +18,9 @@ function ScreenConnexion() {
      
     </div>
     
-    <div className="Login-page grid mtm">
+    <div className="Login-page grid">
       <div className='col-m-12 txt-center' >
-        <h1 className=' txt-white plm prm'>Bienvenue chez Everyone is the Dj </h1>
+        <h1 className=' txt-white plm prm mtm'>Bienvenue chez Everyone is the Dj </h1>
         <p className='txt-white h3-like'>Prêt à faire la fête ? </p>
       </div>
 
@@ -62,4 +62,4 @@ function ScreenConnexion() {
   );
 }
 
-export default ScreenConnexion;
+export default ScreenLog;

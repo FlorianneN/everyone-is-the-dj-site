@@ -4,7 +4,7 @@ import './App.css';
 
 
 import ScreenHome from '../src/components/ScreenHome';
-import ScreenAccueil from '../src/components/ScreenAccueil';
+import ScreenLog from '../src/components/ScreenLog';
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
     <Router>
       <Switch>
-        <Route component={ScreenAccueil} path="/" exact />
+        <Route component={ScreenLog} path="/" exact />
         <Route component={ScreenHome} path="/ScreenHome" exact />
       </Switch>
     </Router>
