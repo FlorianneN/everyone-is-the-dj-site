@@ -17,9 +17,6 @@ function Nav() {
             <div className='col-d-8 txt-right'>
             <Button href='/' className='nav-menu' >Déconnexion</Button>
             </div>
-            {/* <div className='col-d-4'>
-            <Button href='/' className='nav-menu' >Déconnexion</Button>
-            </div> */}
     </div>
   </Container>
   );
