@@ -39,39 +39,43 @@ function ScreenHome(props) {
   // ---------------------TIMER-------------------------
   var handleInitTimer = async () => {
 
+    setTIMER(6000)
     //APPEL AU BACKEND//
 
-    var rawResponse = await fetch('http://192.168.1.35:3000/initTimer20', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `idUserFromFront=${props.hostId}`
-    })
+    // var rawResponse = await fetch('http://192.168.1.35:3000/initTimer20', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   body: `idUserFromFront=${props.hostId}`
+    // })
 
-    var response = await rawResponse.json();
+    // var response = await rawResponse.json();
 
     
 
-    console.log(response);
+    // console.log(response);
   
   }
 
 const Completionist = () => {
-  <div className='mtm' style={{justifyContent:'stretch', textAlign:'center'}}>
+  return(
+        <div className='mtm' style={{justifyContent:'stretch', textAlign:'center'}}>
           <p className='h4-like mts mbs text-center'>Ils ont gagné !!</p>
-      
-          <div className='mbs' style={{width:'100%', justifyContent:'center', alignItems:'baseline', display:"flex"}}>
-            <p className='mrs'>1. Red Hot Chili pepers - Snow</p>
-            <Button className='btn--secondary' onClick={() => btnClick1()}>Lancer le titre</Button>
-          </div>
-          <div className='mbs' style={{width:'100%', justifyContent:'center', alignItems:'baseline', display:"flex"}}>
-            <p className='mrs'>1. Red Hot Chili pepers - Snow</p>
-            <Button className='btn--secondary' onClick={() => btnClick2()}>Lancer le titre</Button>
-          </div>
-          <div className='mbs' style={{width:'100%', justifyContent:'center', alignItems:'baseline', display:"flex"}}>
-            <p className='mrs'>1. Red Hot Chili pepers - Snow</p>
-            <Button className='btn--secondary' onClick={() => btnClick3()}>Lancer le titre</Button>
+          <div  style={{width:'100%'}}>
+            <div className='mbs' style={{ display:"flex"}}>
+              <p className='mrs'>1. Red Hot Chili pepers - Snow</p>
+              <Button className='btn--secondary' onClick={() => btnClick1()}>Lancer le titre</Button>
+            </div>
+            <div className='mbs' style={{ display:"flex"}}>
+              <p className='mrs'>2. Shakira - Waka Waka</p>
+              <Button className='btn--secondary' onClick={() => btnClick2()}>Lancer le titre</Button>
+            </div>
+            <div className='mbs' style={{ display:"flex"}}>
+              <p className='mrs'>3. Avicii - Hey Brother</p>
+              <Button className='btn--secondary' onClick={() => btnClick3()}>Lancer le titre</Button>
+            </div>
           </div>
         </div>
+    )
 };
 
 
@@ -82,9 +86,9 @@ const renderer = ({ minutes, seconds, completed }) => {
 else {
 
   return (
-    <div style={{ marginTop: '6vh' }}>
+    <div>
+      <p className='h4-like mts mbs text-center'>Temps restant pour voter !</p>
       <span className='timer'>{zeroPad(minutes)}:{zeroPad(seconds)}</span>
-      <p className='h6-like'>Vote en cours, temps restant:</p>
     </div>
   )
 }
@@ -126,8 +130,6 @@ var handleValidationList = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `titreFromFront=${SONGchosen}&idUserFromFront=${props.hostId}&tokenFromFront=${props.token}`
-      // body: `titreFromFront=${'Cookie Dingler - Femme libérée'}&idUserFromFront=${'userId_TEST_000000'}&tokenFromFront=${'nnnnnnnnnnnnnnnn'}`
-      // body: `titreFromFront=${SONGchosen}`
     })
     var SONG = await SONGdata.json();
     props.navigation.navigate("Validationvote")
@@ -136,13 +138,13 @@ var handleValidationList = async () => {
 //------------------- Redirection lien gagnant --------------
 
 var btnClick1 = async() => {
-  window.open(`https://www.youtube.com/results?search_query=stromae-ta-fete`)
+  window.open(`https://www.youtube.com/results?search_query=Red Hot Chili pepers - Snow`)
 }
 var btnClick2 = async() => {
-  window.open(`https://www.youtube.com/results?search_query=stromae-ta-fete`)
+  window.open(`https://www.youtube.com/results?search_query=Shakira - Waka Waka`)
 }
 var btnClick3 = async() => {
-  window.open(`https://www.youtube.com/results?search_query=stromae-ta-fete`)
+  window.open(`https://www.youtube.com/results?search_query=Avicii - Hey Brother`)
 }
 
 //----------------------------------------//
@@ -197,10 +199,7 @@ var btnClick3 = async() => {
         <div style={{maxWidth:'100%', display:"flex"}}>
           <div className='' style={{textAlign:'center'}}>
             
-        {TIMER > 0 && (
-               <p className='h4-like mts mbs text-center'>Temps restant pour voter !</p>
-              )
-              }   
+        
           
           
           {TIMER > 0 && (
@@ -212,7 +211,8 @@ var btnClick3 = async() => {
                 </Countdown>
               )
               }
-          <button className='btn--third'
+             
+          <button className='btn--third mtm'
               onClick={() => handleInitTimer()}> Lancer le TIMER</button>
           
           </div>

@@ -7,6 +7,7 @@ var options = {
 }
 
 mongoose.connect('mongodb+srv://xxxxxx@cluster0.xutoc.mongodb.net/xxxxxxx?retryWrites=true&w=majority',
+
     options,
     function(err){
         console.log(err)
