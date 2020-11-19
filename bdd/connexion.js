@@ -6,7 +6,7 @@ var options = {
     useUnifiedTopology: true,
 }
 
-mongoose.connect('mongodb+srv://xxxxxx@cluster0.xutoc.mongodb.net/EveryOneIsTheDJ?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://xxxxxx@cluster0.xutoc.mongodb.net/xxxxxxx?retryWrites=true&w=majority',
     options,
     function(err){
         console.log(err)
