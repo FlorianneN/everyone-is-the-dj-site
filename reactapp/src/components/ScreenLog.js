@@ -11,15 +11,16 @@ function ScreenLog(props) {
 // -----------------------------------event création ----------------------------------------------
  const [errorMessage, setErrorMessage] = useState(false);
  const [eventName, setEventName] = useState('');
- const [eventPassword, setEventPassword] = useState('');
+ const [eventPasswordC, setEventPasswordC] = useState('');
  const [eventID, setEventID] = useState('')
+ const [pseudoC, setPseudoC] = useState('');
 
  var handleEventCreation = async () => {
 
        var rawResponse = await fetch('http://192.168.0.17:3000/eventcreation', {
              method: 'POST',
              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-             body: `eventNameFromFront=${eventName}&eventPasswordFromFront=${eventPassword}&idUserFromFront=${props.hostId}`
+             body: `eventNameFromFront=${eventName}&eventPasswordFromFront=${eventPasswordC}&idUserFromFront=${props.hostId}&pseudoFromFront=${pseudoC}`
        })
 
        var response = await rawResponse.json();
@@ -45,7 +46,7 @@ function ScreenLog(props) {
 
 // --------------------------------- enregistrement invité -----------------------------------------
 const [pseudo, setPseudo] = useState('');
-// const [eventPassword, setEventPassword] = useState('');
+const [eventPassword, setEventPassword] = useState('');
 const [eventId, setEventId] = useState('');
 const [errorMessageE, setErrorMessageE] = useState(false);
 
@@ -60,23 +61,15 @@ var handleEnregistrement =  async () => {
   
   
   console.log("response", response)
-  
-  // props.addGuestEventPassword(eventPassword)
-  // props.addGuestEventID(eventId)
+
+
   
   if (response.result === true) {
   
-    // var token = uuid();
-    // console.log('token', token)
-    var hostId = response.eventExist.user
-    console.log('hostID', hostId)
-    // var userDATA = { token: token, hostID: hostID }
-    // await AsyncStorage.setItem("user", JSON.stringify(userDATA));
-    console.log('Login Success');
-    // addId(hostId);
-    // addToken(token);
-    // navigation.navigate('Nouveauvote');
+    console.log('true', true)
   
+    
+
   } else {
     setErrorMessageE(true)
     console.log('Login Failed')
@@ -118,20 +111,19 @@ var handleEnregistrement =  async () => {
                   <p className='h4-like mts'>Créer une nouvelle soirée</p>
                   
                   <Input className="Login-input" placeholder="max"
-                    onChange={(text) => setPseudo(text.target.value)}
-                    value={pseudo} />
+                    onChange={(text) => setPseudoC(text.target.value)}
+                    value={pseudoC} />
                   <Input className="Login-input" placeholder="1234"
                     onChange={(text) => setEventName(text.target.value)}
                     value={eventName} />
                   <Input className="Login-input" placeholder="password"
-                    onChange={(text) => setEventPassword(text.target.value)}
-                    value={eventPassword} />
+                    onChange={(text) => setEventPasswordC(text.target.value)}
+                    value={eventPasswordC} />
             
-
+                  <Link to="/ScreenHome">
                   <Button 
-                  href="/ScreenHome" 
                   onClick={() => handleEventCreation()} 
-                  type="primary" className='button'>Créer</Button>
+                  type="primary" className='button'>Créer</Button></Link>
             </div>
           </div>
 
@@ -142,19 +134,18 @@ var handleEnregistrement =  async () => {
                   <Input className="Login-input" placeholder="max"
                       onChange={(text) => setPseudo(text.target.value)}
                       value={pseudo} />
-                  <Input className="Login-input" placeholder="soirée max"
+                  <Input className="Login-input" placeholder="1234"
                       onChange={(text) => setEventId(text.target.value)}
                       value={eventId} />
                   <Input className="Login-input" placeholder="password"
                       onChange={(text) => setEventPassword(text.target.value)}
                       value={eventPassword} />
             
-
+                  <Link to="/ScreenHome">
                   <Button 
-                  //href="/ScreenHome" 
                   onClick={() => handleEnregistrement()} 
                   type="primary" 
-                  className='button'>Rejoindre</Button>
+                  className='button'>Rejoindre</Button></Link>
             </div>
 
           </div>

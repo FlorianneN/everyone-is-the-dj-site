@@ -34,7 +34,7 @@ h5, .h5-like {
 	font-size: 1em;
 }
 h6, .h6-like {
-	font-size: 1em;
+	font-size: 1.1em;
 }
 
 p, .body-like {
@@ -273,6 +273,8 @@ height: 100vh;
 	padding: 0 1.25em;
 	line-height: 2.5;
 	text-decoration: none;
+	font-family: 'Staatliches', cursive;
+	font-size: 1em;
 }
 .btn--secondary {
 	display: inline-block;
@@ -283,6 +285,8 @@ height: 100vh;
 	line-height: 2.5;
 	text-decoration: none;
 	border: 0;
+	font-family: 'Staatliches', cursive;
+	font-size: 1em;
   }
 
 .btn--third {
@@ -294,6 +298,8 @@ height: 100vh;
 	line-height: 2.5;
 	text-decoration: none;
 	border: 0;
+	font-family: 'Staatliches', cursive;
+	font-size: 1em;
   }
 
 .button:hover {

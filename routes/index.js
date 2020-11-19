@@ -109,56 +109,56 @@ router.post('/playlist', async function(req,res,next){
 
 
 
-router.post('/sign-up', async function (req, res, next) {
+// router.post('/sign-up', async function (req, res, next) {
 
-  console.log(req.body.email)
+//   console.log(req.body.email)
 
-  var hotes = await HoteModel.findOne({ email: req.body.email });
-  console.log(hotes)
+//   var hotes = await HoteModel.findOne({ email: req.body.email });
+//   console.log(hotes)
 
 
 
-  if (hotes === null) {
+//   if (hotes === null) {
 
-    var newHote = new HoteModel({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    })
-    var hoteSaved = await newHote.save();
-    res.json({ result: true, hote: hoteSaved })
+//     var newHote = new HoteModel({
+//       username: req.body.username,
+//       email: req.body.email,
+//       password: req.body.password
+//     })
+//     var hoteSaved = await newHote.save();
+//     res.json({ result: true, hote: hoteSaved })
 
-  }else{
-    console.log('no')
-    res.json({ result: false })
+//   }else{
+//     console.log('no')
+//     res.json({ result: false })
 
-  }
+//   }
  
-})
+// })
 
 
-router.post('/sign-in', async function (req, res, next) {
-  var hotes = await HoteModel.findOne({ email: req.body.email, password: req.body.password });
+// router.post('/sign-in', async function (req, res, next) {
+//   var hotes = await HoteModel.findOne({ email: req.body.email, password: req.body.password });
 
-  var isEvent = await eventModel.findOne({user: hotes._id})
-
-
-  if (hotes === null) {
-    console.log('no')
-    res.json({ result: false})
-  }
-  else if (isEvent) {
-    console.log('yes Seconde Home Host')
-    res.json({ result: true, hote: hotes, isEvent })
-  }
-  else {
-    console.log('yes Home Host')
-
-    res.json({result: true, hote: hotes})
-  }
+//   var isEvent = await eventModel.findOne({user: hotes._id})
 
 
-})
+//   if (hotes === null) {
+//     console.log('no')
+//     res.json({ result: false})
+//   }
+//   else if (isEvent) {
+//     console.log('yes Seconde Home Host')
+//     res.json({ result: true, hote: hotes, isEvent })
+//   }
+//   else {
+//     console.log('yes Home Host')
+
+//     res.json({result: true, hote: hotes})
+//   }
+
+
+// })
 
 
 router.post('/enregistrement', async function (req, res, next) {
@@ -318,62 +318,6 @@ router.post('/tourdevotecreation', async function (req, res, next) {
 );
 
 // ---------------- route pour afficher le compte à rebours ------------------------------------
-
-router.post('/initTimer5', async function (req, res, next) {
-
-  console.log('body',req.body)
-
-  mongoose.set('useFindAndModify', false);
-
-  var userEvent = await eventModel.findOne(
-    {user: req.body.idUserFromFront, isOpen: true}
-  )
-
-  console.log('userevent', userEvent);
-
-  var tourdevoteMAJ = await tourdevoteModel.findOneAndUpdate(
-    { event: userEvent._id},
-    { echeance: Date.now()+300000 }
-  )
-
-  console.log(tourdevoteMAJ);
-
-   
-  if (tourdevoteMAJ) {
-    res.json({result: true}) 
-  }
-
-  else {
-    res.json({result: false})
-  }
-
-});
-
-router.post('/initTimer10', async function (req, res, next) {
-
-  console.log('body',req.body)
-
-  mongoose.set('useFindAndModify', false);
-
-  var userEvent = await eventModel.findOne(
-    {user: req.body.idUserFromFront, isOpen: true}
-  )
-
-  var tourdevoteMAJ = await tourdevoteModel.findOneAndUpdate(
-    { event: userEvent._id},
-    { echeance: Date.now()+600000 }
-  )
-
-   
-  if (tourdevoteMAJ) {
-    res.json({result: true}) 
-  }
-
-  else {
-    res.json({result: false})
-  }
-
-});
 
 router.post('/initTimer20', async function (req, res, next) {
 
